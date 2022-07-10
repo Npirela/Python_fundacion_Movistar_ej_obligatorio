@@ -1,0 +1,100 @@
+<div class="jumbotron">
+      <h1>Nolberto Pirela</h1>
+          <p>Entrega de Trabajo Final #2</p>
+  
+</div>
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <p><span><b>Ejercicio 1.</b></span>
+        
+1.1) Generar una lista que contenga los números del 1 al 100, usando un
+FOR. <br>
+1.2) Escribir una función lambda, usando FILTER, que me devuelva, en
+formato LISTA, todos los números pares que también sean múltiplos de 5,
+contenidos en dicha lista.</p>
+</div>
+
+
+
+
+
+
+#lista de 100 numeros
+listaCreada = []
+for iterable in range(1,101):
+    listaCreada.append(iterable)
+#print(listaCreada)
+
+#Funcion Lambda
+listaFiltrada =list(filter(lambda numEval:numEval%2==0 and numEval%5==0, listaCreada))   
+print("De la listas de numeros # {} \n \nLos siguentes son Pares y Multiplos de 5 {} ".format(listaCreada,listaFiltrada))
+
+
+------------------------------------------------------------------------------
+
+
+
+<div class="alert alert-info" role="alert">
+    <p><span><b>Ejercicio 2.</b></span>
+        
+Generar una lista, usando FOR con números del 1 al 100.
+Escribir una función lambda, usando REDUCE que me permita calcular el
+promedio de todos los números contenidos en la lista.
+No usar funciones tradicionales</p>
+</div>
+
+
+
+
+
+
+
+
+## Iteracion 1
+
+
+
+
+
+
+
+
+
+#uso de la lista previamente creada en el Ejercicio #1
+#print(listaCreada)
+
+from functools import reduce
+
+promedioLista = (reduce( lambda acumulador1, itemLista1 : acumulador1 + itemLista1  , listaCreada)) / (reduce(lambda acumulador2, itemLista2: acumulador2 + 1, listaCreada)) 
+
+print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Iteracion 2 con len()
+
+
+
+
+#uso de la lista previamente creada en el Ejercicio #1
+#print(listaCreada)
+
+from functools import reduce
+promedioLista = (reduce( lambda a, b : a + b  , listaCreada))/len(listaCreada)
+
+print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
