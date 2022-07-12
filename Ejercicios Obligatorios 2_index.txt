@@ -1,0 +1,90 @@
+Ejercicio 1.
+
+1.1) Generar una lista que contenga los números del 1 al 100, usando un FOR.
+1.2) Escribir una función lambda, usando FILTER, que me devuelva, en formato LISTA, todos los números pares que también sean múltiplos de 5, contenidos en dicha lista.
+
+
+
+
+
+
+
+
+#lista de 100 numeros
+listaCreada = []
+for iterable in range(1,101):
+    listaCreada.append(iterable)
+#print(listaCreada)
+
+#Funcion Lambda
+listaFiltrada =list(filter(lambda numEval:numEval%2==0 and numEval%5==0, listaCreada))   
+print("De la listas de numeros # {} \n \nLos siguentes son Pares y Multiplos de 5 {} ".format(listaCreada,listaFiltrada))
+
+*************************************************************************************************
+
+
+
+
+
+Ejercicio 2.
+
+Generar una lista, usando FOR con números del 1 al 100. Escribir una función lambda, usando REDUCE que me permita calcular el promedio de todos los números contenidos en la lista. No usar funciones tradicionales
+
+
+
+
+
+____________Iteracion 1 reduce()/index()_______________________
+
+
+
+#uso de la lista previamente creada en el Ejercicio #1
+#print(listaCreada)
+
+from functools import reduce
+
+promedioLista = (reduce( lambda a, b : a + b , listaCreada) )/ float(1+listaCreada.index((listaCreada[-1])))
+
+print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
+
+
+
+
+
+
+
+___________________Iteracion 2 con reduce()/reduce()____________________
+
+
+#uso de la lista previamente creada en el Ejercicio #1
+#print(listaCreada)
+
+from functools import reduce
+
+promedioLista = (reduce( lambda acum, item : acum + item , listaCreada)) / (reduce(lambda acum2, item2: acum2 + 1, listaCreada)) 
+
+print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
+
+
+
+
+
+
+
+___________________________Iteracion 3 con reduce()/len()___________________________
+
+#uso de la lista previamente creada en el Ejercicio #1
+#print(listaCreada)
+
+from functools import reduce
+promedioLista = (reduce( lambda a, b : a + b  , listaCreada))/len(listaCreada)
+
+print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
+ 
+
+
+
+
+
+
+
