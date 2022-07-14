@@ -38,12 +38,14 @@ ____________Iteracion 1 reduce()/index()_______________________
 
 
 
+
+
 #uso de la lista previamente creada en el Ejercicio #1
 #print(listaCreada)
 
 from functools import reduce
 
-promedioLista = (reduce( lambda a, b : a + b , listaCreada) )/ float(1+listaCreada.index((listaCreada[-1])))
+promedioLista = (reduce( lambda a, b : a + b  , listaCreada)/ float(1+listaCreada.index((listaCreada[-1]))) )
 
 print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
 
@@ -52,35 +54,6 @@ print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,pro
 
 
 
-
-___________________Iteracion 2 con reduce()/reduce()____________________
-
-
-#uso de la lista previamente creada en el Ejercicio #1
-#print(listaCreada)
-
-from functools import reduce
-
-promedioLista = (reduce( lambda acum, item : acum + item , listaCreada)) / (reduce(lambda acum2, item2: acum2 + 1, listaCreada)) 
-
-print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
-
-
-
-
-
-
-
-___________________________Iteracion 3 con reduce()/len()___________________________
-
-#uso de la lista previamente creada en el Ejercicio #1
-#print(listaCreada)
-
-from functools import reduce
-promedioLista = (reduce( lambda a, b : a + b  , listaCreada))/len(listaCreada)
-
-print("El promedio de La lista {} es: \n \nPromedio = {}".format(listaCreada,promedioLista))
- 
 
 
 
