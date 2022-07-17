@@ -1,0 +1,72 @@
+Nolberto Pirela.
+trabajo final #3
+Ejercicio 1   
+
+
+Ejercicio 1.
+
+Escribir una clase llamada “Alumno” que contenga los siguientes atributos:
+Nombre
+Apellido
+Notas (este atributo debe ser una lista)
+Escribir el método constructor para que, al instanciar la clase, pida por teclado el Nombre, el Apellido y una serie de notas, tantas como quiera ingresar el usuario.
+Las notas deberán estar comprendidas entre 1 y 10, caso contrario mostrar mensaje de error y volver a solicitar.
+El ingreso de notas acaba cuando el usuario ingresa el valor 0 (cero) Sobre escribir el método STR para que, al mostrar el objeto por pantalla, muestre los datos de la siguiente manera:
+Nombre: (valor ingresado)
+Apellido: (valor ingresado)
+Promedio: (promedio de las notas ingresadas)
+Estado: Si el promedio es mayor o igual a 7, mostrar la palabra
+“Promociona”, si es menor a 7 pero mayor o igual a 4, mostrar la palabra “Final” y por último, si el promedio es menor a 4, mostrar la palabra “Recursa”
+
+
+
+
+
+
+   ## Iteracion 1
+	
+	
+	
+	class Alumno :
+
+        
+        def __init__(self):
+       
+            self.nombre = input("Ingrese Su Nombre: ")
+            self.apellido = input("Ingrese Su apellido: ")
+            self.notas = []
+            
+            i=''
+            while i != 0 :
+                i=(int(input("ingese su nota entre uno 1 y 10, Ingrese 0 para finalizar la carga  ")))
+                if i >=1 and i<=10:
+                    self.notas.append(i)
+                elif i <1 and i >10 :
+                    i=(int(input("ingese su nota Deben estar comprendidas entre 1 y 10 ")))
+                elif i==0:
+                    print("Has cargado {} notas".format(len(self.notas)))
+                    
+            
+            self.prom =  sum(self.notas)/len(self.notas)
+            
+            self.estatus =''
+            
+            if self.prom >= 7 :
+                self.estatus = 'Promociona'
+            elif self.prom >= 4 and self.prom <=7 :
+                self.estatus = 'Final'
+            else:
+                self.estatus = 'Recursa'
+        
+           
+        
+        
+        def __str__(self):
+            showScreen = 'Nombre: '+self.nombre+'\nApellido: '+self.apellido+'\npromedio: '+str(self.prom)+'\nEstado: '+self.estatus
+            return showScreen
+           
+                
+        
+        
+alu1=Alumno()
+print(alu1)
